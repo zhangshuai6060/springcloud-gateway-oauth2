@@ -1,0 +1,23 @@
+server:
+  port: 9091
+  servlet:
+    context-path: /resource
+spring:
+  application:
+    name: springcloud-oauth-resource
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.3.37/zxy_system_service?useUnicode=true&characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
+    password: zhangxiaoyun123
+    username: root
+
+cloud:
+  nacos:
+    discovery:
+      #指定nacos server的地址
+      server-addr: 127.0.0.1:8848
+
+logging:
+  level:
+    cloud.zxy.system: debug
+
