@@ -53,17 +53,7 @@ public class SysMenu extends BaseModel {
     @TableField(value = "parent_id")
     private Long parentId;
 
-    /**
-     * 模块名称1.校盟助手2.慧管校3.系统
-     */
-    @TableField(value = "module", fill = FieldFill.INSERT_UPDATE)
-    private Byte module;
 
-    /**
-     * 是否是系统菜单1.是2.不是
-     */
-    @TableField(value = "is_system_menu")
-    private Byte isSystemMenu;
 
     /**
      * 权限码

@@ -38,9 +38,6 @@ public class BaseModel {
     @TableField(value = "last_modify_time", fill = FieldFill.INSERT_UPDATE)
     private Date lastModifyTime;
 
-    @TableField(value = "create_department_id", fill = FieldFill.INSERT_UPDATE)
-    private Long createDepartmentId;
-
     /**
      * 逻辑删除1.正常2.已删除
      */

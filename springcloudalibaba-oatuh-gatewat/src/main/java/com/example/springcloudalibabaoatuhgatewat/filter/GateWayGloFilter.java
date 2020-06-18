@@ -19,6 +19,10 @@ public class GateWayGloFilter implements GlobalFilter , Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+
+        //判断当前请求是否要拦截
+
+
         return null;
     }
 
