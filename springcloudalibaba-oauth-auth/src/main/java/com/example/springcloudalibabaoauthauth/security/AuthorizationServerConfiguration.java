@@ -24,10 +24,9 @@ import javax.sql.DataSource;
 /**
  * 2 * @Author: ZhangShuai
  * 3 * @Date: 2020/6/12 17:26
- * 4
+ * 4 这是一个 oauth2.0的 一个认证服务器
  */
 @Configuration
-//这里 告诉我们 这是一个 oauth2.0的 一个认证服务器
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 

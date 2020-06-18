@@ -1,5 +1,6 @@
 package com.example.springcloudalibabaoauthresource.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
@@ -11,10 +12,22 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
+
+/**
+ * 2 * @Author: ZhangShuai
+ * 3 * @Date: 2020/6/18 11:52
+ * 4 这个注解表示 当前是一个资源服务器
+ */
 @Configuration
-@EnableResourceServer  //这个注解表示 当前是一个资源服务器
+@EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
+
+    @Autowired
+    JwtAccessTokenConverter jwtAccessTokenConverter;
+
+    @Autowired
+    TokenStore tokenStore;
 
     /**
      * 自定义 资源服务器 权限认证失败的异常
@@ -35,39 +48,16 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     }
 
     /**
-     * 自定义资源服务器的token  认证  授权
+     * 设置资源服务器的 token 和自定义的异常
      *
      * @param resources
      * @throws Exception
      */
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.tokenStore(tokenStore())
+        resources.tokenStore(tokenStore)
                 .accessDeniedHandler(getAccessDeniedHandler())
                 .authenticationEntryPoint(getAuthenticationEntryPoint());
-    }
-
-    /**
-     * 自定义 验证token 为什么格式的token  这里是 jwt 要和认证服务器保持一致
-     *
-     * @return
-     */
-    @Bean
-    public TokenStore tokenStore() {
-        return new JwtTokenStore(jwtTokenEnhancer());
-    }
-
-
-    /**
-     * 这里是 jwt要进行签名的一个秘钥
-     *
-     * @return
-     */
-    @Bean
-    public JwtAccessTokenConverter jwtTokenEnhancer() {
-        JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
-        jwtAccessTokenConverter.setSigningKey("557554");
-        return jwtAccessTokenConverter;
     }
 
 }
