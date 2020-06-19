@@ -44,6 +44,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         JwtUser jwtUser = new JwtUser(authUser.getUserName(), authUser.getPassword(), grantedAuthorities);
         jwtUser.setId(authUser.getId());
         jwtUser.setUsername(authUser.getUserName());
+        jwtUser.setEnabled(true);
+        jwtUser.setAccountNonLocked(true);
+        jwtUser.setAccountNonExpired(true);
+        jwtUser.setCredentialsNonExpired(true);
         return jwtUser;
     }
 }

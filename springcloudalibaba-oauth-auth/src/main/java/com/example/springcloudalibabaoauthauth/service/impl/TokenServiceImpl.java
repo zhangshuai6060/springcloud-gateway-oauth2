@@ -28,7 +28,7 @@ import java.util.Map;
 public class TokenServiceImpl implements TokenService {
     /** 这里指的是客户端的信息和密钥 具体看数据库表 oauth_client_details **/
     private final String clientId="client";
-    private final String clientSecret="client";
+    private final String clientSecret="admin";
 
     //在redis里面的过期时间 3600秒
     private final Long ExpireTime=3600l;

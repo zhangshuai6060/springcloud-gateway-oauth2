@@ -40,7 +40,6 @@ public class JwtUser extends User {
 
     //boolean 的值 默认为true
 
-
     public JwtUser(String username, String password,
                    Collection<? extends GrantedAuthority> authorities) {
         super(username, password, true, true, true, true, authorities);

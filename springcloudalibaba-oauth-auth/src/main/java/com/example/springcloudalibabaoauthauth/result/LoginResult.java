@@ -1,20 +1,34 @@
 package com.example.springcloudalibabaoauthauth.result;
 
-import com.example.springcloudalibabaoauthauth.util.AuthCode;
+
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
- * 2 * @Author: ZhangShuai
- * 3 * @Date: 2020/6/18 15:20
- * 4
+ * Created by mrt on 2018/5/21.
  */
 @Data
-public class LoginResult {
-
-    AuthCode authCode;
-
-    public LoginResult(AuthCode authCode){
-        this.authCode=authCode;
+@ToString
+@NoArgsConstructor
+public class LoginResult extends ResponseResult {
+    public LoginResult(ResultCode resultCode, String access_token, String refresh_token) {
+        super(resultCode);
+        this.access_token = access_token;
+        this.refresh_token = refresh_token;
     }
+
+    public LoginResult(ResultCode resultCode, String access_token) {
+        super(resultCode);
+        this.access_token = access_token;
+    }
+
+    public LoginResult(ResultCode resultCode) {
+        super(resultCode);
+    }
+
+
+    private String refresh_token;
+    private String access_token;
 
 }

@@ -15,8 +15,7 @@ public class RedisConfig {
     public RedissonClient redissonClient() {
         //配置当前redis要连接的信息 redis://127.0.0.1:6379
         Config config = new Config();
-        config.useSingleServer().setAddress("redis://192.168.3.37:6379").setPassword("zhangxiaoyun400").setDatabase(1);
-        //config.useSingleServer().setAddress("redis://"+address+":"+port).setPassword(password).setDatabase(database);
+        config.useSingleServer().setAddress("redis://127.0.0.1:6379").setPassword("123").setDatabase(1);
         return Redisson.create(config);
     }
 

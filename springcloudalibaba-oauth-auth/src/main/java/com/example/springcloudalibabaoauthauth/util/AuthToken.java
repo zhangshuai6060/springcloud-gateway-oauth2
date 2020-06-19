@@ -3,7 +3,9 @@ package com.example.springcloudalibabaoauthauth.util;
 import lombok.Data;
 
 /**
- * Created by mrt on 2018/5/21.
+ * 2 * @Author: ZhangShuai
+ * 3 * @Date: 2020/6/12 17:03
+ * 4
  */
 @Data
 public class AuthToken {
