@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloudalibaba-oatuh-gatewat" />
+        <module name="springcloudalibaba-oauth" />
+        <module name="springcloudalibaba-oauth-auth" />
+        <module name="springcloudalibaba-oauth-resource" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springcloudalibaba-oatuh-gatewat" target="1.8" />
+      <module name="springcloudalibaba-oauth" target="1.8" />
+      <module name="springcloudalibaba-oauth-auth" target="1.8" />
+      <module name="springcloudalibaba-oauth-resource" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springcloudalibaba-oatuh-gatewat" options="-parameters" />
+      <module name="springcloudalibaba-oauth" options="-parameters" />
+      <module name="springcloudalibaba-oauth-auth" options="-parameters" />
+      <module name="springcloudalibaba-oauth-resource" options="-parameters" />
+    </option>
+  </component>
+</project>

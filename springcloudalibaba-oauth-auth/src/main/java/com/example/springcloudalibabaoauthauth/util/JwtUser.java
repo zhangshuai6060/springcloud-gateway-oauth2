@@ -1,22 +1,37 @@
 package com.example.springcloudalibabaoauthauth.util;
 
 import lombok.Data;
+import org.springframework.security.core.CredentialsContainer;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
+import java.util.Set;
 
 /**
- * 2 * @Author: ZhangShuai
- * 3 * @Date: 2020/6/12 17:03
- * 4
+ * @author zhangshuai
  */
 @Data
-public class JwtUser extends User {
+public class JwtUser implements UserDetails, CredentialsContainer {
 
+    /**
+     * 用户id
+     */
     private Long id;
 
+    /**
+     * 用户账号
+     */
     private String username;
+
+    /**
+     * 密码
+     */
+    private String password;
+
+    /**
+     * 权限
+     */
+    private Set<GrantedAuthority> authorities;
 
     /**
      * 账号
@@ -38,13 +53,37 @@ public class JwtUser extends User {
      */
     private boolean enabled;
 
-    //boolean 的值 默认为true
-
-    public JwtUser(String username, String password,
-                   Collection<? extends GrantedAuthority> authorities) {
-        super(username, password, true, true, true, true, authorities);
+    public JwtUser() {
+        this.accountNonExpired = true;
+        this.accountNonLocked = true;
+        this.credentialsNonExpired = true;
+        this.enabled = true;
     }
 
 
-}
 
+    @Override
+    public boolean isAccountNonExpired() {
+        return this.accountNonExpired;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return this.accountNonLocked;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return this.credentialsNonExpired;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return this.enabled;
+    }
+
+    @Override
+    public void eraseCredentials() {
+        this.password = null;
+    }
+}

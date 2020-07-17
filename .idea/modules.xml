@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/springcloudalibaba-oatuh-gatewat/springcloudalibaba-oatuh-gatewat.iml" filepath="$PROJECT_DIR$/springcloudalibaba-oatuh-gatewat/springcloudalibaba-oatuh-gatewat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloudalibaba-oauth.iml" filepath="$PROJECT_DIR$/springcloudalibaba-oauth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloudalibaba-oauth-auth/springcloudalibaba-oauth-auth.iml" filepath="$PROJECT_DIR$/springcloudalibaba-oauth-auth/springcloudalibaba-oauth-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloudalibaba-oauth-resource/springcloudalibaba-oauth-resource.iml" filepath="$PROJECT_DIR$/springcloudalibaba-oauth-resource/springcloudalibaba-oauth-resource.iml" />
+    </modules>
+  </component>
+</project>

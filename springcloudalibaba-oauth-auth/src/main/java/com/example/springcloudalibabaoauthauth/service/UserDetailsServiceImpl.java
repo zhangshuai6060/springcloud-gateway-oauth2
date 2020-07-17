@@ -41,13 +41,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             }
         });
         // 构建返回信息
-        JwtUser jwtUser = new JwtUser(authUser.getUserName(), authUser.getPassword(), grantedAuthorities);
+        // 构建返回信息 authUser.getUserName(), authUser.getPassword(), grantedAuthorities
+        JwtUser jwtUser = new JwtUser();
+        jwtUser.setUsername(authUser.getUserName());
+        jwtUser.setPassword(authUser.getPassword());
+        jwtUser.setAuthorities(grantedAuthorities);
         jwtUser.setId(authUser.getId());
         jwtUser.setUsername(authUser.getUserName());
-        jwtUser.setEnabled(true);
-        jwtUser.setAccountNonLocked(true);
-        jwtUser.setAccountNonExpired(true);
-        jwtUser.setCredentialsNonExpired(true);
         return jwtUser;
     }
 }
